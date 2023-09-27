@@ -78,7 +78,7 @@ const fs = require("node:fs/promises");
 (async () => {
     //     //how to benchmak your code
     console.time("writeMany");
-    const fileHandle = await fs.open("file.txt", "w");
+    const fileHandle = await fs.open("../read-many/src.txt", "w");
 
     const stream = fileHandle.createWriteStream();
 
@@ -117,7 +117,7 @@ const fs = require("node:fs/promises");
     const writeMany = () => {
 
         while (i < numberOfWrites) {
-            const buff = Buffer.from(`${i} `, "utf-8")
+            const buff = Buffer.from(` ${i} `, "utf-8")
 
             //this is last write
             if (i === numberOfWrites - 1) {
